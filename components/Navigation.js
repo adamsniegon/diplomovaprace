@@ -40,7 +40,7 @@ export default function Navigation() {
                     </Link>
                 </li>
             </ul>
-            <ReactTooltip place="right" effect="solid" type="light"/>
+            <ReactTooltip place="right" effect="solid"/>
             <style jsx>{`
             .navigation{
                 display: flex;
