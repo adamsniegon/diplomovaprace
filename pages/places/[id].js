@@ -30,6 +30,7 @@ export default function Place({place: {name, description_short, description_long
     return (
         <DetailLayout>
             <div className={styles.place__left}>
+                <h1 className={styles.place__headline}>{name}</h1>
                 <ReadMore>
                     <p className={styles.place__descriptionShort}>{description_short}</p>
                     <p className={styles.place__descriptionLong}>{description_long}</p>
