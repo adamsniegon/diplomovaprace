@@ -3,6 +3,7 @@ import DetailLayout from "../../components/DetailLayout";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import ReadMore from "../../components/ReadMore";
+import BackButton from "../../components/BackButton";
 import styles from '../../styles/Place.module.css';
 
 export async function getStaticProps({params}) {
@@ -30,6 +31,7 @@ export default function Place({place: {name, description_short, description_long
     return (
         <DetailLayout>
             <div className={styles.place__left}>
+                <BackButton/>
                 <h1 className={styles.place__headline}>{name}</h1>
                 <ReadMore>
                     <p className={styles.place__descriptionShort}>{description_short}</p>
