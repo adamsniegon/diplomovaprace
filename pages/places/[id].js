@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import styles from '../../styles/Place.module.css';
 
+import ReadMore from "../../components/ReadMore";
+
 export async function getStaticProps({params}) {
     const {place} = await getPlace(params.id);
     return {
@@ -29,9 +31,7 @@ export default function Place({place: {name, description_short, description_long
     return (
         <DetailLayout>
             <div className={styles.place__left}>
-                <h1 className={styles.place__headline}>{name}</h1>
-                <p className={styles.place__descriptionShort}>{description_short}</p>
-                <p className={styles.place__descriptionLong}>{description_long}</p>
+                <ReadMore shortText={description_short} longText={description_long}/>
                 {image.map(item => (
                     <Image src={item.url} width={`${item.width}`} height={`${item.height}`}/>
                 ))}
