@@ -17,7 +17,7 @@ export default function ReadMore({children}) {
             <div>
                 {children[0]}
             </div>
-            <button className={styles.readMore__button} onClick={toggleReadMore}><img className={styles.readMore__icon} src="/icon-arrow-down.svg"></img>Číst dále</button>
+            <button className={styles.readMore__button} onClick={toggleReadMore}><img className={`${styles.readMore__icon}` + (readMore ? ` ${styles.readMore__iconActive}` : "")} src="/icon-arrow-down.svg"></img>{!readMore ? "Číst dále" : "Zobrazit méně"}</button>
             {readMore && children[1]}
         </>
     );

@@ -10,3 +10,7 @@
     height: 8px;
     margin-right: 10px;
 }
+
+.readMore__iconActive{
+    transform: rotate(180deg);
+}
