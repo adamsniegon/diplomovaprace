@@ -95,7 +95,7 @@ export default function Navigation() {
             }
 
             .navigation__link{
-                padding: 20px 0px;
+                padding: 20px;
                 flex: 1;
                 display: flex;
             }
