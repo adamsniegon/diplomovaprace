@@ -31,7 +31,10 @@ export default function Place({place: {name, description_short, description_long
     return (
         <DetailLayout>
             <div className={styles.place__left}>
-                <ReadMore shortText={description_short} longText={description_long}/>
+                <ReadMore>
+                    <p className={styles.place__descriptionShort}>{description_short}</p>
+                    <p className={styles.place__descriptionLong}>{description_long}</p>
+                </ReadMore>
                 {image.map(item => (
                     <Image src={item.url} width={`${item.width}`} height={`${item.height}`}/>
                 ))}

@@ -1,6 +1,10 @@
 import {useState} from 'react';
 
-export default function ReadMore({shortText, longText}) {
+export default function ReadMore({children}) {
+    if (!Array.isArray(children) || (Array.isArray(children) && children.length !== 2)) {
+        return (null);
+    }
+    
     const [readMore, setReadMore] = useState(false);
 
     const toggleReadMore = () => {
@@ -10,14 +14,10 @@ export default function ReadMore({shortText, longText}) {
     return(
         <>
             <div>
-                <p>{shortText}</p>
+                {children[0]}
             </div>
             <button onClick={toggleReadMore}>Click</button>
-            {readMore && (
-                <div>
-                    <p>{longText}</p>
-                </div>
-            )}
+            {readMore && children[1]}
         </>
     );
 }
