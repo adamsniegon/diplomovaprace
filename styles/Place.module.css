@@ -1,5 +1,5 @@
 .place__left{
-    padding: 50px 100px;
+    padding: 50px 130px;
     overflow-y: auto;
 }
 
@@ -11,11 +11,12 @@
 .place__descriptionShort{
     font-size: 16px;
     text-align: justify;
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .place__descriptionLong{
     font-size: 16px;
     text-align: justify;
-    margin-top: 30px;
+    margin-top: 20px;
 }
