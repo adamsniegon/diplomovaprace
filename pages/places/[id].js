@@ -2,9 +2,8 @@ import {getPlaceIds, getPlace} from "../../lib/places";
 import DetailLayout from "../../components/DetailLayout";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import styles from '../../styles/Place.module.css';
-
 import ReadMore from "../../components/ReadMore";
+import styles from '../../styles/Place.module.css';
 
 export async function getStaticProps({params}) {
     const {place} = await getPlace(params.id);

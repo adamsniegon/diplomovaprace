@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import styles from '../styles/ReadMore.module.css';
 
 export default function ReadMore({children}) {
     if (!Array.isArray(children) || (Array.isArray(children) && children.length !== 2)) {
@@ -16,7 +17,7 @@ export default function ReadMore({children}) {
             <div>
                 {children[0]}
             </div>
-            <button onClick={toggleReadMore}>Click</button>
+            <button className={styles.readMore__button} onClick={toggleReadMore}><img className={styles.readMore__icon} src="/icon-arrow-down.svg"></img>Číst dále</button>
             {readMore && children[1]}
         </>
     );
