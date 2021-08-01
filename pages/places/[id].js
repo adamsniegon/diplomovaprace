@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ReadMore from "../../components/ReadMore";
 import BackButton from "../../components/BackButton";
 import Badge from "../../components/Badge";
+import DetailGallery from "../../components/DetailGallery";
 import styles from '../../styles/Place.module.css';
 
 export async function getStaticProps({params}) {
@@ -42,6 +43,7 @@ export default function Place({place: {name, description_short, description_long
                     <p className={styles.place__descriptionShort}>{description_short}</p>
                     <p className={styles.place__descriptionLong}>{description_long}</p>
                 </ReadMore>
+                <DetailGallery images={image}/>
             </div>
             <div>
                 <Map/>
