@@ -5,6 +5,7 @@
 
 .place__badgeList{
     display: flex;
+    margin-top: 50px;
 }
 
 .place__badgeList p{
@@ -14,12 +15,13 @@
 .place__headline{
     font-size: 35px;
     font-weight: bold;
+    margin-top: 50px;
 }
 
 .place__descriptionShort{
     font-size: 16px;
     text-align: justify;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
