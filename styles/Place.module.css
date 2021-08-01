@@ -3,6 +3,14 @@
     overflow-y: auto;
 }
 
+.place__badgeList{
+    display: flex;
+}
+
+.place__badgeList p{
+    margin-right: 30px;
+}
+
 .place__headline{
     font-size: 35px;
     font-weight: bold;

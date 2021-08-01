@@ -33,8 +33,10 @@ export default function Place({place: {name, description_short, description_long
         <DetailLayout>
             <div className={styles.place__left}>
                 <BackButton/>
-                <Badge text={cityName} icon="/icon-pin.svg"/>
-                <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
+                <div className={styles.place__badgeList}>
+                    <Badge text={cityName} icon="/icon-pin.svg"/>
+                    <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
+                </div>
                 <h1 className={styles.place__headline}>{name}</h1>
                 <ReadMore>
                     <p className={styles.place__descriptionShort}>{description_short}</p>
