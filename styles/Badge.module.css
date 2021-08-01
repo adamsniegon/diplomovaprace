@@ -1,0 +1,10 @@
+.badge{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.badge__icon{
+    height: 15px;
+    margin-right: 10px;
+}

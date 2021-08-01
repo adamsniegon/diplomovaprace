@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import ReadMore from "../../components/ReadMore";
 import BackButton from "../../components/BackButton";
+import Badge from "../../components/Badge";
 import styles from '../../styles/Place.module.css';
 
 export async function getStaticProps({params}) {
@@ -23,7 +24,7 @@ export async function getStaticPaths() {
     }
 }
 
-export default function Place({place: {name, description_short, description_long, image}}) {
+export default function Place({place: {name, description_short, description_long, image, city: {name: cityName}, geojson: {geometry: {coordinates}}}}) {
     const Map = dynamic(() => import('../../components/Map'), {
         ssr: false
     });
@@ -32,6 +33,8 @@ export default function Place({place: {name, description_short, description_long
         <DetailLayout>
             <div className={styles.place__left}>
                 <BackButton/>
+                <Badge text={cityName} icon="/icon-pin.svg"/>
+                <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
                 <h1 className={styles.place__headline}>{name}</h1>
                 <ReadMore>
                     <p className={styles.place__descriptionShort}>{description_short}</p>
