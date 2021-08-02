@@ -46,7 +46,7 @@ export default function Place({place: {name, description_short, description_long
                 <DetailGallery images={image}/>
             </div>
             <div>
-                <Map/>
+                <Map latitude={coordinates[0]} longitude={coordinates[1]}/>
             </div>
         </DetailLayout>
     )
