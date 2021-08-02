@@ -43,9 +43,11 @@ export default function Place({place: {name, description_short, description_long
                     <p className={styles.place__descriptionShort}>{description_short}</p>
                     <p className={styles.place__descriptionLong}>{description_long}</p>
                 </ReadMore>
-                <DetailGallery images={image}/>
+                <div className={styles.place__gallery}>
+                    <DetailGallery images={image}/>
+                </div>
             </div>
-            <div>
+            <div className={styles.place__right}>
                 <Map latitude={coordinates[0]} longitude={coordinates[1]}/>
             </div>
         </DetailLayout>
