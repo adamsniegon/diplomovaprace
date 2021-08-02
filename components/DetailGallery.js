@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import styles from '../styles/DetailGallery.module.css';
-import { SRLWrapper } from 'simple-react-lightbox';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import {SRLWrapper} from 'simple-react-lightbox';
+import styles from '../styles/DetailGallery.module.css';
 
 export default function DetailGallery({images}) {
     return (
