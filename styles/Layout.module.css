@@ -2,15 +2,10 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 100vh;
-    overflow: hidden;
 }
 
 @media only screen and (max-width: 1024px) {
     .layout{
         grid-template-columns: auto;
     }
-}
-
-.layout__main{
-    overflow-y: auto;
 }
