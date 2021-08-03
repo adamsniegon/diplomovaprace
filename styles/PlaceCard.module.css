@@ -1,12 +1,11 @@
 .placeCard{
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 8px;
-    /*box-shadow: 0px 0px 20px 0px #e6e6e6;*/
-    border: 1px solid #e6e6e6;
+    box-shadow: 0px 0px 10px 0px #e6e6e6;
 }
 
 .placeCard__image{
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .placeCard__info{

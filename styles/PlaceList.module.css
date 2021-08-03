@@ -1,7 +1,19 @@
 .placeList{
     max-width: 1600px;
-    padding: 50px 50px;
+    padding: 50px;
     margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .placeList{
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .placeList{
+        padding: 30px 10px;
+    }
 }
 
 .placeList__headline{
@@ -14,6 +26,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .placeList__list{
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
 }
 
 .placeList__link{
