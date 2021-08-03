@@ -7,7 +7,7 @@ export default function PlaceCard({name, description, cityName, image}) {
 
     return (
         <div className={styles.placeCard}>
-            <Image className={styles.placeCard__image} src={image.url} width={image.width} height={image.height}/>
+            <div className={styles.placeCard__image} style={{backgroundImage: `url(${image.url})`}}></div>
             <div className={styles.placeCard__info}>
                 <h1 className={styles.placeCard__name}>{name}</h1>
                 <p className={styles.placeCard__description} title={description}>{shortDescription()}</p>

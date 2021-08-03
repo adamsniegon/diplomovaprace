@@ -2,10 +2,14 @@
     border-radius: 10px;
     padding: 8px;
     box-shadow: 0px 0px 10px 0px #e6e6e6;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 .placeCard__image{
     border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
 }
 
 .placeCard__info{

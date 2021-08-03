@@ -16,7 +16,7 @@ export default function PlaceList() {
                 {places.map(({id, name, description_short, url, city: {name: cityName}, image}) => (
                     <Link href={`/places/${url}`}>
                         <a className={styles.placeList__link}>
-                            <PlaceCard key={id} name={name} description={description_short} cityName={cityName} image={image[0]}/>
+                            <PlaceCard key={id} name={name} description={description_short} cityName={cityName} image={image[3]}/>
                         </a>
                     </Link>
                 ))}
