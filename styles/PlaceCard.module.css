@@ -1,0 +1,37 @@
+.placeCard{
+    border-radius: 20px;
+    padding: 8px;
+    /*box-shadow: 0px 0px 20px 0px #e6e6e6;*/
+    border: 1px solid #e6e6e6;
+}
+
+.placeCard__image{
+    border-radius: 20px;
+}
+
+.placeCard__info{
+    padding: 0px 10px 10px 10px;
+}
+
+.placeCard__name{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.placeCard__description{
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.placeCard__badge{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.placeCard__badgeIcon{
+    height: 15px;
+    margin-right: 10px;
+}
