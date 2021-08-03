@@ -3,7 +3,13 @@
     padding: 8px;
     box-shadow: 0px 0px 10px 0px #e6e6e6;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 150px auto;
+}
+
+@media only screen and (max-width: 439px) {
+    .placeCard{
+        grid-template-rows: 200px auto;
+    }
 }
 
 .placeCard__image{
