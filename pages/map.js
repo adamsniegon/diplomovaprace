@@ -26,8 +26,8 @@ export default function Map() {
                     {error && <div>failed to load</div>}
                     {!places && <div>loading...</div>}
                     {places && places.map(({id, name, description_short, url, city: {name: cityName}, image}) => (
-                        <Link key={id} href={`/places/${url}`} id={"neco"}>
-                            <a id={"neco"} className={styles.mapList__link}>
+                        <Link key={id} href={`/places/${url}`}>
+                            <a className={styles.mapList__link}>
                                 <div className={styles.mapList__card}>
                                     <div className={styles.mapList__cardImageWrapper}>
                                         <Image className={styles.mapList__cardImage} src={image[0].url} width={image[0].width} height={image[0].height}/>
