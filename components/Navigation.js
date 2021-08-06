@@ -33,7 +33,7 @@ export default function Navigation() {
                 </li>
                 <li className="navigation__item">
                     <Link href={'/map'}>
-                        <a className={`${styles.navigation__link}` + (pathname.startsWith('/map') ? ` ${navigation__linkActive}` : "")} data-tip="Mapa" data-background-color="#e7e7e7" data-text-color="#000000">
+                        <a className={`${styles.navigation__link}` + (pathname.startsWith('/map') ? ` ${styles.navigation__linkActive}` : "")} data-tip="Mapa" data-background-color="#e7e7e7" data-text-color="#000000">
                             <svg className={styles.navigation__icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.938 17.29">
                                 <g className={styles.navigation__iconGroup} transform="translate(-488.081 -25.282)" stroke="#8c8c8c" strokeWidth="1.109" strokeDashoffset="693.543" paintOrder="fill markers stroke">
                                     <path className={styles.navigation__path} d="M491.744 36.192h6.107c1.541 0 2.158.42 2.655 1.558l.627 1.44c.316.853 1.31 2.828-3.107 2.828h-6.377c-3.002 0-3.344-1.075-2.798-2.742l.65-1.492c.408-.629.802-1.542 2.243-1.592z" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
