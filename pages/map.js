@@ -4,6 +4,7 @@ import MapLayout from '../components/MapLayout';
 import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
+import SkeletonMapCard from '../components/SkeletonMapCard';
 import styles from '../styles/MapPage.module.css';
 
 const MapPage = dynamic(() => import('../components/MapPage'), {
@@ -23,8 +24,7 @@ export default function Map() {
             </Head>
             <MapLayout>
                 <div className={styles.mapList}>
-                    {places && places.map(({id, name, description_short, url, city: {name: cityName}, image}) => (
-                        <>
+                    {places ? places.map(({id, name, description_short, url, city: {name: cityName}, image}) => (
                         <Link key={id} href={`/places/${url}`}>
                             <a className={styles.mapList__link}>
                                 <div className={styles.mapList__card}>
@@ -39,64 +39,7 @@ export default function Map() {
                                 </div>
                             </a>
                         </Link>
-                        <Link key={id} href={`/places/${url}`}>
-                            <a className={styles.mapList__link}>
-                                <div className={styles.mapList__card}>
-                                    <div className={styles.mapList__cardImageWrapper}>
-                                        <Image className={styles.mapList__cardImage} src={image[0].url} width={image[0].width} height={image[0].height}/>
-                                    </div>
-                                    <div>
-                                        <h1 className={styles.mapList__cardHeadline}>{name}</h1>
-                                        <p className={styles.mapList__cardDescription} title={description_short}>{shortDescription(description_short)}</p>
-                                        <p className={styles.mapList__cardCityName}><img className={styles.mapList__cardIcon} src="/icon-pin.svg"></img>{cityName}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </Link>
-                        <Link key={id} href={`/places/${url}`}>
-                            <a className={styles.mapList__link}>
-                                <div className={styles.mapList__card}>
-                                    <div className={styles.mapList__cardImageWrapper}>
-                                        <Image className={styles.mapList__cardImage} src={image[0].url} width={image[0].width} height={image[0].height}/>
-                                    </div>
-                                    <div>
-                                        <h1 className={styles.mapList__cardHeadline}>{name}</h1>
-                                        <p className={styles.mapList__cardDescription} title={description_short}>{shortDescription(description_short)}</p>
-                                        <p className={styles.mapList__cardCityName}><img className={styles.mapList__cardIcon} src="/icon-pin.svg"></img>{cityName}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </Link>
-                        <Link key={id} href={`/places/${url}`}>
-                            <a className={styles.mapList__link}>
-                                <div className={styles.mapList__card}>
-                                    <div className={styles.mapList__cardImageWrapper}>
-                                        <Image className={styles.mapList__cardImage} src={image[0].url} width={image[0].width} height={image[0].height}/>
-                                    </div>
-                                    <div>
-                                        <h1 className={styles.mapList__cardHeadline}>{name}</h1>
-                                        <p className={styles.mapList__cardDescription} title={description_short}>{shortDescription(description_short)}</p>
-                                        <p className={styles.mapList__cardCityName}><img className={styles.mapList__cardIcon} src="/icon-pin.svg"></img>{cityName}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </Link>
-                        <Link key={id} href={`/places/${url}`}>
-                            <a className={styles.mapList__link}>
-                                <div className={styles.mapList__card}>
-                                    <div className={styles.mapList__cardImageWrapper}>
-                                        <Image className={styles.mapList__cardImage} src={image[0].url} width={image[0].width} height={image[0].height}/>
-                                    </div>
-                                    <div>
-                                        <h1 className={styles.mapList__cardHeadline}>{name}</h1>
-                                        <p className={styles.mapList__cardDescription} title={description_short}>{shortDescription(description_short)}</p>
-                                        <p className={styles.mapList__cardCityName}><img className={styles.mapList__cardIcon} src="/icon-pin.svg"></img>{cityName}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </Link>
-                        </>
-                    ))}
+                    )) : [...Array(20)].map(index => <SkeletonMapCard key={index}/>)}
                 </div>
                 <MapPage/>
             </MapLayout>

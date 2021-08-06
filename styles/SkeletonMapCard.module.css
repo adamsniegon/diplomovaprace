@@ -1,0 +1,21 @@
+.skeletonMapCard{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    box-shadow: 0px 0px 10px 0px #c4c4c4;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.skeletonMapCard:last-of-type{
+    margin-bottom: auto;
+}
+
+.skeletonMapCard__description:first-of-type{
+    margin-top: 10px;
+}
+
+.skeletonMapCard__badge{
+    margin-top: 10px;
+}
