@@ -6,6 +6,12 @@
 .mapList__link{
     text-decoration: none;
     color: #000000;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.mapList__link:last-of-type{
+    margin-bottom: auto;
 }
 
 .mapList__card{
