@@ -21,7 +21,7 @@ export default function PlaceList() {
                         </a>
                     </Link>
                 )) : <>
-                        {[...Array(20)].map(key => <SkeletonPlaceCard key={key}/>)}
+                        {[...Array(20)].map(index => <SkeletonPlaceCard key={index}/>)}
                     </>}
             </div>
         </div>
