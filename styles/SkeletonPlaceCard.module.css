@@ -1,0 +1,21 @@
+.skeletonPlaceCard{
+    box-shadow: 0px 0px 10px 0px #c4c4c4;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.skeletonPlaceCard__info{
+    padding: 0px 10px 10px 10px;
+}
+
+.skeletonPlaceCard__name{
+    margin-top: 15px;
+}
+
+.skeletonPlaceCard__description:first-of-type{
+    margin-top: 10px;
+}
+
+.skeletonPlaceCard__badge{
+    margin-top: 10px;
+}
