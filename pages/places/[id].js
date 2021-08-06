@@ -1,7 +1,6 @@
 import {getPlaceIds, getPlace} from "../../lib/places";
 import DetailLayout from "../../components/DetailLayout";
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import ReadMore from "../../components/ReadMore";
 import BackButton from "../../components/BackButton";
 import Badge from "../../components/Badge";
