@@ -31,7 +31,7 @@ export default function Navigation() {
                         </a>
                     </Link>
                 </li>
-                <li className="navigation__item">
+                <li className={styles.navigation__item}>
                     <Link href={'/map'}>
                         <a className={`${styles.navigation__link}` + (pathname.startsWith('/map') ? ` ${styles.navigation__linkActive}` : "")} data-tip="Mapa" data-background-color="#e7e7e7" data-text-color="#000000">
                             <svg className={styles.navigation__icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.938 17.29">
