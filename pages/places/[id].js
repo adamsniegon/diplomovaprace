@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 }
 
 export default function Place({place: {name, description_short, description_long, image, city: {name: cityName}, geojson: {geometry: {coordinates}}}}) {
-    const Map = dynamic(() => import('../../components/Map'), {
+    const MapComponent = dynamic(() => import('../../components/MapComponent'), {
         ssr: false
     });
 
@@ -47,7 +47,7 @@ export default function Place({place: {name, description_short, description_long
                 </div>
             </div>
             <div className={styles.place__right}>
-                <Map latitude={coordinates[0]} longitude={coordinates[1]}/>
+                <MapComponent latitude={coordinates[0]} longitude={coordinates[1]}/>
             </div>
         </DetailLayout>
     )

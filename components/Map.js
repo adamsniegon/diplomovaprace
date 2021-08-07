@@ -1,12 +1,12 @@
 import {useState} from 'react';
 import {MapContainer, TileLayer, Marker, Popup, ZoomControl} from 'react-leaflet';
 import Head from 'next/head';
-import styles from '../styles/Map.module.css';
+import styles from '../styles/MapPageComponent.module.css';
 
-export default function Map({latitude, longitude}) {
-    const [view, setView] = useState([latitude, longitude]);
+export default function Map() {
+    const [view, setView] = useState([49.848610, 18.512469]);
     const [zoom, setZoom] = useState(14);
-
+    
     return (
         <>
             <Head>
@@ -17,7 +17,6 @@ export default function Map({latitude, longitude}) {
             <MapContainer className={styles.map} center={view} zoom={zoom} zoomControl={false}>
                 <ZoomControl position="topright"/>
                 <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                <Marker icon={new L.Icon({className: "map__pin", iconAnchor: [15, 50], iconSize: [30, 50], iconUrl: "/icon-pin.svg"})} position={[latitude, longitude]}></Marker>
             </MapContainer>
         </>
     );
