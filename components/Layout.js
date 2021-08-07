@@ -1,11 +1,10 @@
 import Navigation from './Navigation';
-import styles from '../styles/Layout.module.css';
 
 export default function Layout({children}) {
     return(
-        <div className={styles.layout}>
+        <div>
             <Navigation/>
-            <main className={styles.layout__main}>{children}</main>
+            <main>{children}</main>
         </div>
     );
 }

@@ -1,7 +1,13 @@
 .placeList{
     max-width: 1600px;
-    padding: 50px;
+    padding: 50px 200px;
     margin: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    .placeList{
+        padding: 50px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
