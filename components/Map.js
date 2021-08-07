@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {MapContainer, TileLayer, Marker, Popup, ZoomControl} from 'react-leaflet';
 import Head from 'next/head';
-import styles from '../styles/MapPageComponent.module.css';
+import styles from '../styles/Map.module.css';
 
 export default function Map() {
     const [view, setView] = useState([49.848610, 18.512469]);
@@ -14,10 +14,12 @@ export default function Map() {
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
             </Head>
-            <MapContainer className={styles.map} center={view} zoom={zoom} zoomControl={false}>
-                <ZoomControl position="topright"/>
-                <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-            </MapContainer>
+            <div className={styles.map__wrapper}>
+                <MapContainer className={styles.map} center={view} zoom={zoom} zoomControl={false}>
+                    <ZoomControl position="topright"/>
+                    <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                </MapContainer>
+            </div>
         </>
     );
 }

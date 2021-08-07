@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/Map.module.css';
 
 const PageMap = dynamic(() => import('../components/Map'), {
     ssr: false
