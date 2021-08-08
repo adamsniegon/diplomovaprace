@@ -5,6 +5,7 @@ import ReadMore from "../../components/ReadMore";
 import BackButton from "../../components/BackButton";
 import Badge from "../../components/Badge";
 import DetailGallery from "../../components/DetailGallery";
+import Tag from "../../components/Tag";
 import styles from '../../styles/Place.module.css';
 
 export async function getStaticProps({params}) {
@@ -24,7 +25,7 @@ export async function getStaticPaths() {
     }
 }
 
-export default function Place({place: {name, description_short, description_long, image, city: {name: cityName}, geojson: {geometry: {coordinates}}}}) {
+export default function Place({place: {name, description_short, description_long, image, city: {name: cityName}, geojson: {geometry: {coordinates}}, tags}}) {
     const MapComponent = dynamic(() => import('../../components/MapComponent'), {
         ssr: false
     });
@@ -36,6 +37,9 @@ export default function Place({place: {name, description_short, description_long
                 <div className={styles.place__badgeList}>
                     <Badge text={cityName} icon="/icon-pin.svg"/>
                     <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
+                </div>
+                <div className={styles.place__tagList}>
+                    {tags.map(({name}) => <Tag name={name}/>)}
                 </div>
                 <h1 className={styles.place__headline}>{name}</h1>
                 <ReadMore>
