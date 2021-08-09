@@ -1,0 +1,61 @@
+.filter{
+    position: relative;
+}
+
+.filter__button{
+    display: flex;
+    align-items: center;
+    border: 1px solid #dddddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #ffffff;
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+}
+
+.filter__buttonText{
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.filter__buttonIcon{
+    height: 20px;
+}
+
+.filter__menu{
+    position: absolute;
+    top: 32px;
+    right: 0px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px 0px #e6e6e6;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    transform: perspective(100px) translate3d(0px, 0px, -20px);
+    transform-origin: top right;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.filter__menuActive{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.filter__tag{
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.filter__tagActive{
+    background: #d1d1d1;
+}
