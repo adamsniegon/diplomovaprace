@@ -44,9 +44,9 @@ export default function Filter({filter, setFilter, tags}) {
                 <img className={styles.filter__buttonIcon} src="/icon-filter.svg"></img>
             </div>
             <div className={`${styles.filter__menu}` + (isOpen ? ` ${styles.filter__menuActive}` : "")}>
-                {tags.map(tag => (
-                    <div data-id={tag.id} data-filter={false} className={styles.filter__tag} onClick={toggleTag}>
-                        <Tag name={tag.name}/>
+                {tags.map(({id, name}) => (
+                    <div key={id} data-id={id} data-filter={false} className={styles.filter__tag} onClick={toggleTag}>
+                        <Tag name={name}/>
                     </div>
                 ))}
             </div>

@@ -38,13 +38,13 @@ export default function PlaceList() {
             </div>
             <div className={styles.placeList__list}>
                 {filteredPlaces ? filteredPlaces.map(({id, name, description_short, url, city: {name: cityName}, image}) => (
-                    <Link href={`/places/${url}`}>
+                    <Link key={id} href={`/places/${url}`}>
                         <a className={styles.placeList__link}>
-                            <PlaceCard key={id} name={name} description={description_short} cityName={cityName} image={image[0]}/>
+                            <PlaceCard name={name} description={description_short} cityName={cityName} image={image[0]}/>
                         </a>
                     </Link>
                 )) : <>
-                        {[...Array(20)].map(index => <SkeletonPlaceCard key={index}/>)}
+                        {[...Array(20)].map((value, index) => <SkeletonPlaceCard key={index}/>)}
                     </>}
             </div>
         </div>
