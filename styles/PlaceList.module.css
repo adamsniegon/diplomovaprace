@@ -4,9 +4,9 @@
     margin: auto;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1400px) {
     .placeList{
-        padding: 50px;
+        padding: 50px 100px;
     }
 }
 
