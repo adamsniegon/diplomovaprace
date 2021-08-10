@@ -1,5 +1,6 @@
 import {getPlaceIds, getPlace} from "../../lib/places";
 import DetailLayout from "../../components/DetailLayout";
+import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import ReadMore from "../../components/ReadMore";
 import BackButton from "../../components/BackButton";
@@ -47,28 +48,35 @@ export default function Place({place: {name, description_short, description_long
     });
 
     return (
-        <DetailLayout>
-            <div className={styles.place__left}>
-                <BackButton/>
-                <div className={styles.place__badgeList}>
-                    <Badge text={cityName} icon="/icon-pin.svg"/>
-                    <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
+        <>
+            <Head>
+                <title>{name} | InMapa - Interaktivní turistická mapa Karvinska</title>
+                <meta name="description" content="Interaktivní turistická mapa Karvinska"/>
+                <meta name="keywords" content="InMapa, mapa, turistická mapa, místa, zajímavá místa, Karvinsko, Karviná, Orlová, Havířov, Bohumín, Stonava, Dětmarovice, Doubrava"/>
+            </Head>
+            <DetailLayout>
+                <div className={styles.place__left}>
+                    <BackButton/>
+                    <div className={styles.place__badgeList}>
+                        <Badge text={cityName} icon="/icon-pin.svg"/>
+                        <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
+                    </div>
+                    <div className={styles.place__tagList}>
+                        {tags.map(({name}) => <Tag name={name}/>)}
+                    </div>
+                    <h1 className={styles.place__headline}>{name}</h1>
+                    <ReadMore>
+                        <p className={styles.place__descriptionShort}>{description_short}</p>
+                        <p className={styles.place__descriptionLong}>{description_long}</p>
+                    </ReadMore>
+                    <div className={styles.place__gallery}>
+                        <DetailGallery images={image}/>
+                    </div>
                 </div>
-                <div className={styles.place__tagList}>
-                    {tags.map(({name}) => <Tag name={name}/>)}
+                <div className={styles.place__right}>
+                    <MapComponent latitude={coordinates[0]} longitude={coordinates[1]}/>
                 </div>
-                <h1 className={styles.place__headline}>{name}</h1>
-                <ReadMore>
-                    <p className={styles.place__descriptionShort}>{description_short}</p>
-                    <p className={styles.place__descriptionLong}>{description_long}</p>
-                </ReadMore>
-                <div className={styles.place__gallery}>
-                    <DetailGallery images={image}/>
-                </div>
-            </div>
-            <div className={styles.place__right}>
-                <MapComponent latitude={coordinates[0]} longitude={coordinates[1]}/>
-            </div>
-        </DetailLayout>
+            </DetailLayout>
+        </>
     )
 }
