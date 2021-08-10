@@ -3,6 +3,11 @@ import {MapContainer, TileLayer, Marker, Popup, ZoomControl} from 'react-leaflet
 import Head from 'next/head';
 import styles from '../styles/MapComponent.module.css';
 
+/**
+ * Map component used in place detail page
+ * @param {*} param0 latitude and longitude of specific places
+ * @returns map with place location pin
+ */
 export default function MapComponent({latitude, longitude}) {
     const [view, setView] = useState([latitude, longitude]);
     const [zoom, setZoom] = useState(14);

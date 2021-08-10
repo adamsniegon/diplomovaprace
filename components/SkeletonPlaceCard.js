@@ -1,6 +1,10 @@
 import Skeleton from 'react-loading-skeleton';
 import styles from '../styles/SkeletonPlaceCard.module.css';
 
+/**
+ * Skeleton loader to indicate that list with places is loading
+ * @returns skeleton of loading place cards
+ */
 export default function SkeletonPlaceCard() {
     return (
         <div className={styles.skeletonPlaceCard}>

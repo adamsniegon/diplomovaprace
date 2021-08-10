@@ -4,10 +4,17 @@ import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
 
+/**
+ * Dynamically import map for Map page
+ */
 const PageMap = dynamic(() => import('../components/Map'), {
     ssr: false
 });
 
+/**
+ * Base Map page component
+ * @returns Map page
+ */
 export default function Map() {
     const {data: places, error} = useSWR(`${process.env.NEXT_PUBLIC_STRAPI_API}/places`);
 

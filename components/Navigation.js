@@ -3,6 +3,10 @@ import {useRouter} from 'next/router';
 import dynamic from 'next/dynamic';
 import styles from '../styles/Navigation.module.css';
 
+/**
+ * Navigation to browse between app pages
+ * @returns navigation for the app
+ */
 export default function Navigation() {
     const ReactTooltip = dynamic(() => import("react-tooltip"), {
         ssr: false,

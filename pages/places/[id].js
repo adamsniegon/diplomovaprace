@@ -8,6 +8,11 @@ import DetailGallery from "../../components/DetailGallery";
 import Tag from "../../components/Tag";
 import styles from '../../styles/Place.module.css';
 
+/**
+ * Get data about specific page
+ * @param {*} param0 slug of URL for places
+ * @returns object with specific page data
+ */
 export async function getStaticProps({params}) {
     const {place} = await getPlace(params.id);
     return {
@@ -17,6 +22,9 @@ export async function getStaticProps({params}) {
     }
 }
 
+/**
+ * Get paths for places detail pages
+ */
 export async function getStaticPaths() {
     const paths = await getPlaceIds();
     return {
@@ -25,7 +33,15 @@ export async function getStaticPaths() {
     }
 }
 
+/**
+ * 
+ * @param {*} param0 specific place properties
+ * @returns Specific place detail page
+ */
 export default function Place({place: {name, description_short, description_long, image, city: {name: cityName}, geojson: {geometry: {coordinates}}, tags}}) {
+    /**
+     * Dynamically import MapComponent to show place location
+     */
     const MapComponent = dynamic(() => import('../../components/MapComponent'), {
         ssr: false
     });

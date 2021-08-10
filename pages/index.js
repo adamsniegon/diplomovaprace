@@ -2,6 +2,10 @@ import Head from 'next/head';
 import PlaceList from '../components/PlaceList';
 import styles from '../styles/Home.module.css';
 
+/**
+ * App homepage
+ * @returns Homepage
+ */
 export default function Home() {
   return (
     <div className={styles.home}>

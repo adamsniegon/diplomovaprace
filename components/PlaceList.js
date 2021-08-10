@@ -6,7 +6,10 @@ import Filter from './Filter';
 import SkeletonPlaceCard from './SkeletonPlaceCard';
 import styles from '../styles/PlaceList.module.css';
 
-
+/**
+ * List with places cards used on homepage
+ * @returns list of cards with places
+ */
 export default function PlaceList() {
     const [filter, setFilter] = useState([]);
     const [filteredPlaces, setFilteredPlaces] = useState([]);
@@ -16,6 +19,9 @@ export default function PlaceList() {
     
     if (error) return <div>failed to load</div>
 
+    /**
+     * Filtering places according to selected tags
+     */
     useEffect(() => {
         if (places && filter.length > 0) {
             setFilteredPlaces(state => places.filter(place => {

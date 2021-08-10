@@ -1,6 +1,11 @@
 import {useState} from 'react';
 import styles from '../styles/ReadMore.module.css';
 
+/**
+ * Adds functionality to show long description about specific place
+ * @param {*} param0 children with texts to render in place detail page
+ * @returns component with short and long description
+ */
 export default function ReadMore({children}) {
     if (!Array.isArray(children) || (Array.isArray(children) && children.length !== 2)) {
         return (null);

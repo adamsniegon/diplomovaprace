@@ -2,10 +2,18 @@ import {useState, useEffect, useRef} from 'react';
 import Tag from './Tag';
 import styles from '../styles/Filter.module.css';
 
+/**
+ * Filter places by selected tags
+ * @param {*} param0 filter, setFilter and tags to show in popup menu
+ * @returns Filter component
+ */
 export default function Filter({filter, setFilter, tags}) {
     const [isOpen, setIsOpen] = useState(false);
     const filterMenu = useRef();
 
+    /**
+     * Add event listener to be able close popup menu with click outside
+     */
     useEffect(() => {
         document.addEventListener("mousedown", clickOutside);
         return () => {
@@ -13,16 +21,27 @@ export default function Filter({filter, setFilter, tags}) {
         }
     }, [filterMenu]);
 
+    /**
+     * Check if user clicked on the popup menu
+     * @param {*} e event
+     */
     const clickOutside = (e) => {
         if (filterMenu.current && !filterMenu.current.contains(e.target)) {
             setIsOpen(state => false);
         }
     }
 
+    /**
+     * Toggle isOpen state to open or close popup menu
+     */
     const toggleMenu = () => {
         setIsOpen(state => !state);
     }
 
+    /**
+     * Add or remove selected tag from state
+     * @param {*} e event
+     */
     const toggleTag = (e) => {
         if (e.currentTarget.dataset.filter === "false") {
             const id = e.currentTarget.dataset.id;
