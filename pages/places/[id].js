@@ -62,7 +62,7 @@ export default function Place({place: {name, description_short, description_long
                         <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
                     </div>
                     <div className={styles.place__tagList}>
-                        {tags.map(({name}) => <Tag name={name}/>)}
+                        {tags.map(({id, name}) => <Tag key={id} name={name}/>)}
                     </div>
                     <h1 className={styles.place__headline}>{name}</h1>
                     <ReadMore>
