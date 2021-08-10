@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Badge from './Badge';
 import styles from '../styles/Map.module.css';
 
-export default function Map({places}) {
+export default function Map({places = []}) {
     const [view, setView] = useState([49.848610, 18.512469]);
     const [zoom, setZoom] = useState(12);
 
