@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import PlaceList from '../components/PlaceList';
+import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 
 /**
@@ -22,6 +23,7 @@ export default function Home() {
         <meta name="theme-color" content="#ffffff"/>
       </Head>
       <PlaceList/>
+      <Footer/>
     </div>
   )
 }
