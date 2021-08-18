@@ -39,7 +39,7 @@ export async function getStaticPaths() {
  * @param {*} param0 specific place properties
  * @returns Specific place detail page
  */
-export default function Place({place: {name, description_short, description_long, image, city: {name: cityName}, geojson: {geometry: {coordinates}}, tags}}) {
+export default function Place({place: {name, description_short, description_long, image, city, geojson: {geometry: {coordinates}}, tags}}) {
     /**
      * Dynamically import MapComponent to show place location
      */
@@ -58,7 +58,7 @@ export default function Place({place: {name, description_short, description_long
                 <div className={styles.place__left}>
                     <BackButton/>
                     <div className={styles.place__badgeList}>
-                        <Badge text={cityName} icon="/icon-pin.svg"/>
+                        <Badge text={city && city.name} icon="/icon-pin.svg"/>
                         <Badge text={`${coordinates[0]}, ${coordinates[1]}`} icon="/icon-location.svg"/>
                     </div>
                     <div className={styles.place__tagList}>

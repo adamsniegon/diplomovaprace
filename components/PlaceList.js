@@ -43,10 +43,10 @@ export default function PlaceList() {
                 <Filter filter={filter} setFilter={setFilter} tags={tags ? tags : []}/>
             </div>
             <div className={styles.placeList__list}>
-                {filteredPlaces ? filteredPlaces.map(({id, name, description_short, url, city: {name: cityName}, image}) => (
+                {filteredPlaces ? filteredPlaces.map(({id, name, description_short, url, city, image}) => (
                     <Link key={id} href={`/places/${url}`}>
                         <a className={styles.placeList__link}>
-                            <PlaceCard name={name} description={description_short} cityName={cityName} image={image[0]}/>
+                            <PlaceCard name={name} description={description_short} cityName={city && city.name} image={image[0]}/>
                         </a>
                     </Link>
                 )) : <>

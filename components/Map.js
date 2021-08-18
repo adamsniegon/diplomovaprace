@@ -26,7 +26,7 @@ export default function Map({places = []}) {
                 <MapContainer className={styles.map} center={view} zoom={zoom} zoomControl={false}>
                     <ZoomControl position="topright"/>
                     <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                    {places.map(({id, name, description_short, url, image, city: {name: cityName}, geojson: {geometry: {coordinates}}}) => (
+                    {places.map(({id, name, description_short, url, image, city, geojson: {geometry: {coordinates}}}) => (
                         <Marker key={id} icon={new L.Icon({className: "map__pin", iconAnchor: [15, 50], iconSize: [30, 50], iconUrl: "/icon-pin.svg", popupAnchor: [0, -50]})} position={[coordinates[0], coordinates[1]]}>
                             <Popup>
                                 <Link href={`/places/${url}`}>
@@ -35,7 +35,7 @@ export default function Map({places = []}) {
                                         <h1 className={styles.map__name}>{name}</h1>
                                         <p className={styles.map__description}>{shortDescription(description_short)}</p>
                                         <div className={styles.map__badge}>
-                                            <Badge text={cityName} icon="/icon-pin.svg"/>
+                                            <Badge text={city && city.name} icon="/icon-pin.svg"/>
                                         </div>
                                     </a>
                                 </Link>
