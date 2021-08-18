@@ -33,7 +33,7 @@ export default function Map({places = []}) {
                                     <a className={styles.map__link}>
                                         <Image className={styles.map__image} src={image[0].url} width={image[0].width} height={image[0].height}/>
                                         <h1 className={styles.map__name}>{name}</h1>
-                                        <p className={styles.map__description}>{shortDescription(description_short)}</p>
+                                        <p className={styles.map__description} title={description_short}>{shortDescription(description_short)}</p>
                                         <div className={styles.map__badge}>
                                             <Badge text={city && city.name} icon="/icon-pin.svg"/>
                                         </div>
