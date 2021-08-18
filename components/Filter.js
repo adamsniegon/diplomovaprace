@@ -1,5 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import Tag from './Tag';
+import Image from 'next/image';
 import styles from '../styles/Filter.module.css';
 
 /**
@@ -60,7 +61,7 @@ export default function Filter({filter, setFilter, tags}) {
         <div className={styles.filter} ref={filterMenu}>
             <div className={styles.filter__button} onClick={toggleMenu}>
                 <p className={styles.filter__buttonText}>Filtr</p>
-                <img className={styles.filter__buttonIcon} src="/icon-filter.svg"></img>
+                <Image src={"/icon-filter.svg"} width="20px" height="15px"></Image>
             </div>
             <div className={`${styles.filter__menu}` + (isOpen ? ` ${styles.filter__menuActive}` : "")}>
                 {tags.map(({id, name}) => (

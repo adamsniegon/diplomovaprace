@@ -17,8 +17,6 @@ export default function PlaceList() {
     const {data: places, error} = useSWR(`${process.env.NEXT_PUBLIC_STRAPI_API}/places`);
     const {data: tags, errorTags} = useSWR(`${process.env.NEXT_PUBLIC_STRAPI_API}/tags`);
     
-    if (error) return <div>failed to load</div>
-
     /**
      * Filtering places according to selected tags
      */
@@ -34,7 +32,7 @@ export default function PlaceList() {
         }
     }, [places, filter]);
 
-
+    if (error) return <div>failed to load</div>
 
     return (
         <div className={styles.placeList}>

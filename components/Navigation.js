@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import styles from '../styles/Navigation.module.css';
 
 /**
@@ -20,7 +21,7 @@ export default function Navigation() {
                 <li className={`${styles.navigation__item} ${styles.navigation__itemLogo}`}>
                     <Link href={'/'}>
                         <a className={styles.navigation__link}>
-                            <img className={styles.navigation__icon} src="/icon-logo.svg"></img>
+                            <div className={styles.navigation__icon}><Image src={"/icon-logo.svg"} width="30px" height="30px"></Image></div>
                         </a>
                     </Link>
                 </li>

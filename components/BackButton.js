@@ -1,4 +1,5 @@
 import styles from '../styles/BackButton.module.css';
+import Image from 'next/image';
 import {useRouter} from 'next/router'
 
 /**
@@ -13,6 +14,6 @@ export default function BackButton() {
     }
 
     return (
-        <button className={styles.backButton} onClick={backButtonClick}><img className={styles.backButton__icon} src="/icon-arrow-back.svg"></img>Zpět</button>
+        <button className={styles.backButton} onClick={backButtonClick}><div className={styles.backButton__icon}><Image src="/icon-arrow-back.svg" width="20px" height="15px"></Image></div>Zpět</button>
     )
 }

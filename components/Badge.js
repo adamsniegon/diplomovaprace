@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from '../styles/Badge.module.css';
 
 /**
@@ -7,6 +8,6 @@ import styles from '../styles/Badge.module.css';
  */
 export default function Badge({text, icon}) {
     return (
-        <p className={styles.badge}><img className={styles.badge__icon} src={icon}></img>{text}</p>
+        <p className={styles.badge}><div className={styles.badge__icon}><Image src={icon} width="15px" height="15px"></Image></div>{text}</p>
     )
 }

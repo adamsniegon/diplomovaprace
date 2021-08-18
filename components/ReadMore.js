@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Image from 'next/image';
 import styles from '../styles/ReadMore.module.css';
 
 /**
@@ -7,12 +8,12 @@ import styles from '../styles/ReadMore.module.css';
  * @returns component with short and long description
  */
 export default function ReadMore({children}) {
+    const [readMore, setReadMore] = useState(false);
+    
     if (!Array.isArray(children) || (Array.isArray(children) && children.length !== 2)) {
         return (null);
     }
     
-    const [readMore, setReadMore] = useState(false);
-
     const toggleReadMore = () => {
         setReadMore(state => !state);
     }
@@ -22,7 +23,7 @@ export default function ReadMore({children}) {
             <div>
                 {children[0]}
             </div>
-            <button className={styles.readMore__button} onClick={toggleReadMore}><img className={`${styles.readMore__icon}` + (readMore ? ` ${styles.readMore__iconActive}` : "")} src="/icon-arrow-down.svg"></img>{!readMore ? "Číst dále" : "Zobrazit méně"}</button>
+            <button className={styles.readMore__button} onClick={toggleReadMore}><div className={`${styles.readMore__icon}` + (readMore ? ` ${styles.readMore__iconActive}` : "")}><Image src={'/icon-arrow-down.svg'} width="20px" height="8px"></Image></div>{!readMore ? "Číst dále" : "Zobrazit méně"}</button>
             {readMore && children[1]}
         </>
     );
