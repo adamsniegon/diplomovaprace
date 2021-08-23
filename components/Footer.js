@@ -1,9 +1,8 @@
 import styles from '../styles/Footer.module.css';
 
 /**
- * Creates global layout with navigation
- * @param {*} param0 children components
- * @returns global layout with navigation
+ * Creates Footer component with text
+ * @returns Footer with text
  */
 export default function Footer() {
     return(
