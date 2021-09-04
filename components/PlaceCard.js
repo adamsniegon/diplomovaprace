@@ -16,7 +16,7 @@ export default function PlaceCard({name, description, cityName, image}) {
             <div className={styles.placeCard__info}>
                 <h1 className={styles.placeCard__name}>{name}</h1>
                 <p className={styles.placeCard__description} title={description}>{shortDescription()}</p>
-                <p className={styles.placeCard__badge}><div className={styles.placeCard__badgeIcon}><Image src={'/icon-pin.svg'} width="15px" height="15px"></Image></div>{cityName}</p>
+                <div className={styles.placeCard__badge}><div className={styles.placeCard__badgeIcon}><Image src={'/icon-pin.svg'} width="15px" height="15px"></Image></div><p>{cityName}</p></div>
             </div>
         </div>
     )
