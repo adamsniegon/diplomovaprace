@@ -27,8 +27,8 @@ export default function PlaceList() {
                 return filter.some(item => tags.includes(item));
             }));
         }
-        if (filter.length === 0) {
-            setFilteredPlaces(places);
+        if (filter.length === 0 && places) {
+            setFilteredPlaces(state => places);
         }
     }, [places, filter]);
 
@@ -41,7 +41,7 @@ export default function PlaceList() {
                 <Filter filter={filter} setFilter={setFilter} tags={tags ? tags : []}/>
             </div>
             <div className={styles.placeList__list}>
-                {filteredPlaces ? filteredPlaces.map(({id, name, description_short, url, city, image}) => (
+                {filteredPlaces.length > 0 ? filteredPlaces.map(({id, name, description_short, url, city, image}) => (
                     <Link key={id} href={`/places/${url}`}>
                         <a className={styles.placeList__link}>
                             <PlaceCard name={name} description={description_short} cityName={city && city.name} image={image[0]}/>
