@@ -10,20 +10,6 @@ import Tag from "../../components/Tag";
 import styles from '../../styles/Place.module.css';
 
 /**
- * Get data about specific page
- * @param {*} param0 slug of URL for places
- * @returns object with specific page data
- */
-export async function getStaticProps({params}) {
-    const {place} = await getPlace(params.id);
-    return {
-        props: {
-            place
-        }
-    }
-}
-
-/**
  * Get paths for places detail pages
  */
 export async function getStaticPaths() {
@@ -31,6 +17,20 @@ export async function getStaticPaths() {
     return {
         paths,
         fallback: false
+    }
+}
+
+/**
+ * Get data about specific page
+ * @param {*} param0 slug of URL for places
+ * @returns object with specific page data
+ */
+ export async function getStaticProps({params}) {
+    const {place} = await getPlace(params.id);
+    return {
+        props: {
+            place
+        }
     }
 }
 
