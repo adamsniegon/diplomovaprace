@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 }
 
 /**
- * 
+ * Place detail page
  * @param {*} param0 specific place properties
  * @returns Specific place detail page
  */
