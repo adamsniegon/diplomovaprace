@@ -35,18 +35,18 @@ export async function getStaticPaths() {
 }
 
 /**
+ * Dynamically import MapComponent to show place location
+ */
+const MapComponent = dynamic(() => import('../../components/MapComponent'), {
+    ssr: false
+});
+
+/**
  * Place detail page
  * @param {*} param0 specific place properties
  * @returns Specific place detail page
  */
 export default function Place({place: {name, description_short, description_long, image, city, geojson: {geometry: {coordinates}}, tags}}) {
-    /**
-     * Dynamically import MapComponent to show place location
-     */
-    const MapComponent = dynamic(() => import('../../components/MapComponent'), {
-        ssr: false
-    });
-
     return (
         <>
             <Head>
