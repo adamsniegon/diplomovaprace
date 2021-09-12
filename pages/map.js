@@ -7,7 +7,7 @@ import Image from 'next/image';
 /**
  * Dynamically import map for Map page
  */
-const PageMap = dynamic(() => import('../components/Map'), {
+const MapPage = dynamic(() => import('../components/Map'), {
     ssr: false
 });
 
@@ -27,7 +27,7 @@ export default function Map() {
                 <meta name="description" content="Interaktivní turistická mapa Karvinska"/>
                 <meta name="keywords" content="InMapa, mapa, turistická mapa, místa, zajímavá místa, Karvinsko, Karviná, Orlová, Havířov, Bohumín, Stonava, Dětmarovice, Doubrava"/>
             </Head>
-            <PageMap places={places}/>
+            <MapPage places={places}/>
         </>
   )
 }
