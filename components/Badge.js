@@ -8,6 +8,6 @@ import styles from '../styles/Badge.module.css';
  */
 export default function Badge({text, icon}) {
     return (
-        <p className={styles.badge}><div className={styles.badge__icon}><Image src={icon} width="15px" height="15px"></Image></div>{text}</p>
+        <div className={styles.badge}><div className={styles.badge__icon}><Image src={icon} width="15px" height="15px"></Image></div>{text}</div>
     )
 }

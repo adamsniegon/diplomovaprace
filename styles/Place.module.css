@@ -38,7 +38,7 @@
     }
 }
 
-.place__badgeList p{
+.place__badgeList > div{
     margin-right: 30px;
 }
 
